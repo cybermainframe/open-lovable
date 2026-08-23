@@ -64,7 +64,7 @@ export const appConfig = {
     // Model display names
     modelDisplayNames: {
       'openai/gpt-5': 'GPT-5',
-      'qwen/qwen3.6-27b': 'Llama 3.3 70B (Groq)',
+      'qwen/qwen3.6-27b': 'Qwen 3.6 27B (Groq)',
       'anthropic/claude-sonnet-4-20250514': 'Sonnet 4',
       'google/gemini-3-pro-preview': 'Gemini 3 Pro (Preview)'
     } as Record<string, string>,
