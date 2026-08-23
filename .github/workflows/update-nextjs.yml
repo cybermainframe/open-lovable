@@ -1,0 +1,21 @@
+name: Update Next.js
+on: workflow_dispatch
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 9
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: 'pnpm'
+      - run: pnpm install
+      - run: pnpm update next@latest @next/env@latest @next/swc-linux-x64-gnu@latest --latest
+      - run: pnpm install --lockfile-only
+      - uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "fix: update next.js to latest secure version"
+          branch: main
