@@ -10,7 +10,7 @@ jobs:
           node-version: 22
       - run: corepack enable && corepack prepare pnpm@9 --activate
       - run: pnpm install
-      - run: pnpm update next@latest @next/env@latest --latest
+      - run: pnpm update next @next/env --latest
       - run: pnpm install --lockfile-only
       - uses: stefanzweifel/git-auto-commit-action@v6
         with:
